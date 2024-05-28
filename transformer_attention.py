@@ -67,13 +67,14 @@ def plot_graph_from_attention(attentions, tokenizer, text):
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
     plt.show()
 
-#input text to analyze relation between tokens
-text = "bob is the philanthropy chair"
+# input text to analyze relations between tokens
+# example input: "bob is the philanthropy chair"
+text = input("\nEnter text input: ")
 attentions, tokenizer = get_attention_map(text)
 
-#display attention matrix as a heat map
-#this shows the weights between tokens
+# display attention matrix as a heat map
+# this shows the weights between tokens
 plot_attention_map(attentions, tokenizer, text)
 
-#plot directed graph showing weights (edges) between tokens (vertices)
+# plot directed graph showing weights (edges) between tokens (vertices)
 plot_graph_from_attention(attentions, tokenizer, text)
